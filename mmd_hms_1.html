@@ -5,7 +5,7 @@
       <style>
       body {
   margin: 0;
-  background-color: #292929;
+  background-color: white;
   overflow-x: hidden;
 }
 
@@ -50,20 +50,6 @@
   color: gray;
 }
 
-.search {
-  background: #2b2b2b;
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
-}
-
-.search input {
-  height: 25px;
-  background: #2b2b2b;
-  border: none;
-  outline: none;
-  color: white;
-}
 
 .profilenot {
   font-size: 25px;
@@ -352,6 +338,67 @@
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+.dropbtn {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #1a1a1a}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(0, 154, 212);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: grey;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+
+
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;} 
   to {bottom: 30px; opacity: 1;}
@@ -386,10 +433,72 @@
  <!-- Sidebar -->
         <div id="Sidebar11" class="sidebar1">
           <a href="javascript:void(0)" class="closebtn" onclick="closeSide()">&times;</a>
-          <a id="first" href="#"><i class="fas fa-home"></i>Home</a>
-          <a href=""><i class="fas fa-fire"></i>Trending</a>
-          <a href="#"><i class="fas fa-history"></i>History</a>
-          <a id="last" href="#"><i class="fas fa-plus"></i>Upload video</a>
+         
+          <a id="first" href="#"><i class="fas fa-home"></i>Welcome Suraj</a>
+          <a id="" href="#"></i>General</a>
+          
+          <a id="" href="#"><i class="fas fa-home"></i>Home | Dashboard</a>
+
+          <a href=""><i class="fas fa-fire"></i>User Management</a>
+
+          <div class="dropdown">
+          <a class="dropbtn"><i class="fas fa-bullhorn"></i>Patient Management
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Register Patient</a>
+                    <a href="#">Update Patient</a>
+                    <a href="#">Delete Patient</a>
+                    <a href="#">All Patients</a>
+                    <a href="#"> Active Patients</a>
+                    <a href="#"> Discharged Patients</a>
+                    <a href="#"> Deleted Patients</a>
+                    <a href="#">Search Patients</a></div></div>
+
+                    <div class="dropdown">
+          <a class="dropbtn"><i class="fas fa-fire"></i>Diagnostic Dpmt
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Register Diagnostics</a>
+                    <a href="#">Diagnostics Status</a>
+                    <a href="#">Update Diagnostics</a>
+                    </div></div>
+
+                    <div class="dropdown">
+          <a class="dropbtn"><i class="fas fa-briefcase"></i>Medicine Store
+                    
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Register Medicine</a>
+                    <a href="#">Medicine Status</a>
+                    <a href="#">Update Medicine</a>
+                    <a href="#">Delete Medicine</a>
+                    </div></div>
+
+        <a href=""><i class="fa fa-fire"></i>Billing Department</a>
+
+        <div class="dropdown">
+          <a class="dropbtn"><i class="fas fa-plus"></i>Pharmacy
+                    
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Register Diagnostics</a>
+                    <a href="#">Register Medicine</a>
+                    </div></div>
+
+
+<div class="dropdown">
+          <a class="dropbtn"><i class="fas fa-cogs"></i>Inventory
+                    
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Register Inventory</a>
+                    <a href="#">Medicine Inventory</a>
+                    <a href="#">Update Inventory</a>
+                    <a href="#">Delete Inventory</a>
+                    </div></div>
+
+<a href=""><i class="fas fa-bicycle"></i>Logout</a>
+
         </div>
         
         <!-- Navbar -->
@@ -416,15 +525,16 @@
           <p>Notifications</p>
         </div>
 
-        <div class="notifications">
-            
+        <div class="notifications" style="color: white">
+           <br><small> Date : <span id='date-time'></span> </small>
             
         </div>
       </div>
       
       <div id="profile">
           <a href="#"><i class="fas fa-user-circle"></i>Profile</a>
-           <a href="@"><i class="fab fa-shopify"></i>Purchases and memberships</a>
+          <a href="@"><i class="fa fa-plus"></i>Tasks</a>
+           <a href="@"><i class="fab fa-shopify"></i>Liabilities</a>
            <a href="#"><i class="fas fa-users-cog"></i>Edit profile</a>
            <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
       </div>
@@ -433,22 +543,56 @@
       
       </div>
       
-            <form autocomplete="off" action="searchpage.php" method="post" class="search">
-        <input type="search" name="search" id='txtName' value="" placeholder="Search..."/>
-        <i style="color:gray;" class="fas fa-search"></i>
-      </form>
+            <div class="heading">
+       <a href="#"> <h1 id="logo" style="color: rgb(66, 70, 65); display: inline-flex; font-size: 20px;">MadrasMed
+            <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">HMS </div></a>
+        </h1>
+    </div> 
       
       
     </div>
    
-   <h2>Click 2 times on notification or profile button to display div</h2>
-    
-    
+<div class="grid-container">
+
+ <div class="item1"><p>Dashboard</p></div>
+
+  <div class="item2"> <i class="fa fa-address-book"></i>
+    <p style="color: black;"> Search Patient </p>
+      <form action="" method="POST">
+        <input type="text" class="text" value="Aadhar ID" name="Aadhar_id" id="Aadhar_id"><a href="#>"<i class="fa fa-search"></i></a>
+    </form></div>
+
+  <div class="item3"><i class='fas fa-briefcase-medical'></i>
+    <p style="color: black;"> Search Doctor </p>
+
+      <form action="" method="POST">
+        <input type="text" class="text"  value="Doctor Name" name="Aadhar_id" id="Aadhar_id"><a href="#>"<i class="fa fa-search"></i></a>
+    </form></div>
+
+
+  <div class="item4"><i class='fas fa-capsules'></i>
+    <p style="color: black;"> Search Medicine </p>
+
+      <form action="" method="POST">
+        <input type="text" class="text" value="Medicine Name" name="Aadhar_id" id="Aadhar_id"><a href="#>"<i class="fa fa-search"></i></a>
+    </form></div>  
+
+  <div class="item5">Quick Register Patient</div>
+  <div class="item6">All Patients</div>
+  <div class="item7">Diagnostic Status</div>  
+  <div class="item8">Statistics</div>
+  <div class="item9">Active Patients</div>
+  <div class="item10">Active Staff</div>
+  <div class="item11">Inventory Count</div>
+  <div class="item12">Doctors Available</div>  
+
+  
+</div>
 
 <!-- main end -->
 </div>
 
-<div id="snackbar">Otvorili ste sidebar</div>
+<div id="snackbar">sidebar</div>
 
  <script>
  
@@ -473,6 +617,10 @@
 
   <!-- notifications -->
   function openNotifications() {
+
+    var dt = new Date();
+    document.getElementById('date-time').innerHTML=dt.toDateString();;
+  
     var x =
     document.getElementById("nottifications");
     if (x.style.display === "none") {
@@ -514,7 +662,6 @@ function hideVideo(e) {
     }
   }
 
-  
 function goBack() {
   window.history.back()
 }
