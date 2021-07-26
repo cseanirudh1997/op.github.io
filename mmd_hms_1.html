@@ -9,6 +9,11 @@
   overflow-x: hidden;
 }
 
+a{
+  color: black;
+  text-decoration:none;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -153,25 +158,25 @@
 
 .scrollbar
 {
-	margin-left: 30px;
-	float: left;
-	height: 300px;
-	width: 65px;
-	background: #F5F5F5;
-	overflow-y: scroll;
-	margin-bottom: 25px;
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
 }
 
 .force-overflow
 {
-	min-height: 450px;
+  min-height: 450px;
 }
 
 #wrapper
 {
-	text-align: center;
-	width: 500px;
-	margin: auto;
+  text-align: center;
+  width: 500px;
+  margin: auto;
 }
 
 
@@ -379,24 +384,74 @@
 }
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-gap: 2px;
   background-color: grey;
   padding: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
-  padding: 10px 0;
-  font-size: 30px;
+  padding: 5px 0;
+  font-size: 20px;
 }
 
 .item1 {
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column: 1/4;
 }
 
+.grid-container_1 {
+  display: grid;
+  grid-gap: 5px;
+  background-color: grey;
+  padding: 5px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-container_1  > div {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.item9 {
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+
+.item10 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.item11 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.item12 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+
+.item13 {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+
+
+#rect {
+  border-radius: 12px;
+  height: 50px;
+  width: 200px;
+  background-color: rgb(0, 154, 212);
+  padding: 10px;
+  text-align: center;
+}
 
 
 @-webkit-keyframes fadein {
@@ -434,15 +489,15 @@
         <div id="Sidebar11" class="sidebar1">
           <a href="javascript:void(0)" class="closebtn" onclick="closeSide()">&times;</a>
          
-          <a id="first" href="#"><i class="fas fa-home"></i>Welcome Suraj</a>
+          <a id="first" href="#"><i class="fas fa-home fa-fw"></i>Welcome Suraj</a>
           <a id="" href="#"></i>General</a>
           
-          <a id="" href="#"><i class="fas fa-home"></i>Home | Dashboard</a>
+          <a id="" href="#"><i class="fas fa-home fa-fw"></i>Home | Dashboard</a>
 
-          <a href=""><i class="fas fa-fire"></i>User Management</a>
+          <a href=""><i class="fas fa-fire fa-fw"></i>User Management</a>
 
           <div class="dropdown">
-          <a class="dropbtn"><i class="fas fa-bullhorn"></i>Patient Management
+          <a class="dropbtn"><i class="fas fa-bullhorn fa-fw"></i>Patient Management
                 </a>
                 <div class="dropdown-content">
                     <a href="#">Register Patient</a>
@@ -455,7 +510,7 @@
                     <a href="#">Search Patients</a></div></div>
 
                     <div class="dropdown">
-          <a class="dropbtn"><i class="fas fa-fire"></i>Diagnostic Dpmt
+          <a class="dropbtn"><i class="fas fa-fire fa-fw"></i>Diagnostic Dpmt
                 </a>
                 <div class="dropdown-content">
                     <a href="#">Register Diagnostics</a>
@@ -464,7 +519,7 @@
                     </div></div>
 
                     <div class="dropdown">
-          <a class="dropbtn"><i class="fas fa-briefcase"></i>Medicine Store
+          <a class="dropbtn"><i class="fas fa-briefcase fa-fw"></i>Medicine Store
                     
                 </a>
                 <div class="dropdown-content">
@@ -474,10 +529,10 @@
                     <a href="#">Delete Medicine</a>
                     </div></div>
 
-        <a href=""><i class="fa fa-fire"></i>Billing Department</a>
+        <a href=""><i class="fa fa-fire fa-fw"></i>Billing Department</a>
 
         <div class="dropdown">
-          <a class="dropbtn"><i class="fas fa-plus"></i>Pharmacy
+          <a class="dropbtn"><i class="fas fa-plus fa-fw"></i>Pharmacy
                     
                 </a>
                 <div class="dropdown-content">
@@ -487,7 +542,7 @@
 
 
 <div class="dropdown">
-          <a class="dropbtn"><i class="fas fa-cogs"></i>Inventory
+          <a class="dropbtn"><i class="fas fa-cogs fa-fw"></i>Inventory
                     
                 </a>
                 <div class="dropdown-content">
@@ -532,11 +587,11 @@
       </div>
       
       <div id="profile">
-          <a href="#"><i class="fas fa-user-circle"></i>Profile</a>
-          <a href="@"><i class="fa fa-plus"></i>Tasks</a>
-           <a href="@"><i class="fab fa-shopify"></i>Liabilities</a>
-           <a href="#"><i class="fas fa-users-cog"></i>Edit profile</a>
-           <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          <a href="#"><i class="fas fa-user-circle fa-fw"></i>Profile</a>
+          <a href="#"><i class="fa fa-plus fa-fw"></i>Tasks</a>
+           <a href="#"><i class="fab fa-shopify fa-fw"></i>Liabilities</a>
+           <a href="#"><i class="fas fa-users-cog fa-fw"></i>Edit profile</a>
+           <a href="#"><i class="fas fa-sign-out-alt fa-fw"></i>Logout</a>
       </div>
     </div>
 
@@ -554,40 +609,42 @@
    
 <div class="grid-container">
 
- <div class="item1"><p>Dashboard</p></div>
+ <div class="item1"><p style="text-align: left;"> &nbsp &nbsp Dashboard</p></div>
 
-  <div class="item2"> <i class="fa fa-address-book"></i>
-    <p style="color: black;"> Search Patient </p>
+  <div class="item2"> <p><i class="fa fa-address-book fa-fw"></i>
+    Search Patient </p>
       <form action="" method="POST">
         <input type="text" class="text" value="Aadhar ID" name="Aadhar_id" id="Aadhar_id"><a href="#>"<i class="fa fa-search"></i></a>
     </form></div>
 
-  <div class="item3"><i class='fas fa-briefcase-medical'></i>
-    <p style="color: black;"> Search Doctor </p>
+  <div class="item3"><p><i class='fas fa-briefcase-medical fa-fw'></i>
+    Search Doctor </p>
 
       <form action="" method="POST">
         <input type="text" class="text"  value="Doctor Name" name="Aadhar_id" id="Aadhar_id"><a href="#>"<i class="fa fa-search"></i></a>
     </form></div>
 
 
-  <div class="item4"><i class='fas fa-capsules'></i>
-    <p style="color: black;"> Search Medicine </p>
+  <div class="item4"><p><i class='fas fa-capsules fa-fw'></i>
+    Search Medicine </p>
 
       <form action="" method="POST">
         <input type="text" class="text" value="Medicine Name" name="Aadhar_id" id="Aadhar_id"><a href="#>"<i class="fa fa-search"></i></a>
-    </form></div>  
+    </form></div>  </div>
 
-  <div class="item5">Quick Register Patient</div>
-  <div class="item6">All Patients</div>
-  <div class="item7">Diagnostic Status</div>  
-  <div class="item8">Statistics</div>
-  <div class="item9">Active Patients</div>
-  <div class="item10">Active Staff</div>
-  <div class="item11">Inventory Count</div>
-  <div class="item12">Doctors Available</div>  
+ <div class="grid-container_1"> 
+  <div class="item5" id= "rect" style="margin-left: 60"><a href = "#"><p>Quick Register Patient</p></div></a>
+  <div class="item6" id= "rect"><p><a href = "#">Quick Register Medicine </p></div></a>
+  <div class="item7" id= "rect"><p><a href = "#">All Patients</p></div></a>
+  <div class="item8" id= "rect"><p><a href = "#">Diagnostic Status</p></div></a>  
+  <div class="item9"><img src="https://www.cambridgemaths.org/Images/The-trouble-with-graphs.jpg" width="600" height="250"></div>
+  <div class="item10">Active Patients<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">234 </div></div>
+  <div class="item11">Active Staff<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">31 </div></div>
+  <div class="item12">Inventory Count<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">65 </div></div>
+  <div class="item13">Doctors Available<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">12 </div></div>  </div>
 
   
-</div>
+
 
 <!-- main end -->
 </div>
