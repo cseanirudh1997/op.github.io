@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+a{
+  color: black;
+  text-decoration:none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+body {
+  height: 100vh;
+  background: white;
+ }
+
+ul {
+  background: yellow;
+  padding: 18px 0 10px 10px;
+  border-right: 5px solid #3F83EF;
+  width: 130px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+ul li {
+  list-style: none;
+  padding: 15px;
+  padding-right: 0;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+}
+
+ul li:hover {
+  transition: 0s;
+  background: #242932;
+}
+
+ul li.active:before {
+  content: '';
+  position: absolute;
+  top:-20px;
+  right: 0px;
+  width: 20px;
+  height:20px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 10px 10px 0 #3F83EF;
+}
+
+ul li.active:after {
+  content: '';
+  position: absolute;
+  bottom:-20px;
+  right: 0px;
+  width: 20px;
+  height:20px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 10px -10px 0 #3F83EF;
+
+}
+
+ul li.active {
+  background: #3F83EF;
+}
+
+ul:hover {
+  width: 200px
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-gap: 20px;
+  padding: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 20px;
+}
+
+.item1 {
+  grid-column: 1/4;
+}
+
+.grid-container_1 {
+  display: grid;
+  grid-gap: 5px;
+  padding: 5px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-container_1  > div {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.item9 {
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+
+.item10 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.item11 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.item12 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+
+.item13 {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+
+
+#rect {
+  border-radius: 12px;
+  height: 50px;
+  width: 200px;
+  background-color: rgb(0, 154, 212);
+  padding: 10px;
+  text-align: center;
+}
+.navigation{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    transition: 0.5s;
+}
+</style>
+</head>
+<body>
+<div class="navigation">
+  <ul>
+     <li><a href="#">
+                    <span class="icon"><ion-icon name="home"></ion-icon></span>
+                    <span class="title">Welcome Suraj</span >
+                </a></li>
+
+   <li> <a href="#">
+                    <span class="icon"><ion-icon name="analytics"></ion-icon></span>
+                    <span class="title">Home | Dashboard</span>
+                </a></li>
+     <li><a href="#">
+                    <span class="icon"><ion-icon name="eye"></ion-icon></span>
+                    <span class="title">Patient Management</span>
+                </a></li>
+    <li><a href="#">
+                    <span class="icon"><ion-icon name="chatboxes"></ion-icon></span>
+                    <span class="title">User Management</span>
+                </a></li>
+    <li><a href="#">
+                    <span class="icon"><ion-icon name="settings"></ion-icon></span>
+                    <span class="title">Diagnostic Department</span>
+                </a></li>
+    <li> <a href="#">
+                    <span class="icon"><ion-icon name="star"></ion-icon></span>
+                    <span class="title">Medicine Store</span>
+                </a></li>
+    <li><a href="#">
+                    <span class="icon"><ion-icon name="happy"></ion-icon></span>
+                    <span class="title">Billing Department</span>
+                </a></li>
+
+                <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="compass"></ion-icon></span>
+                    <span class="title">Inventory</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="log-out"></ion-icon></span>
+                    <span class="title">Log-out</span>
+                </a>
+            </li>
+  </ul>
+</div>
+
+<div style="margin-left: 120px;">
+      <div class="grid-container">
+      	 
+ <div class="item1"><p style="text-align: left;"> &nbsp &nbsp &nbsp Dashboard</p></div>
+
+  <div class="item2"> <p>
+    Search Patient </p>
+      <form action="" method="POST">
+        <input type="text" class="text" value="Aadhar ID" name="Aadhar_id" id="Aadhar_id"><a href="#"><ion-icon name="search"></ion-icon></a>
+    </form></div>
+
+  <div class="item3"><p><i class='fas fa-briefcase-medical fa-fw'></i>
+    Search Doctor </p>
+
+      <form action="" method="POST">
+        <input type="text" class="text"  value="Doctor Name" name="Aadhar_id" id="Aadhar_id"><a href="#"><ion-icon name="search"></ion-icon></a>
+    </form></div>
+
+  <div class="item4"><p><i class='fas fa-capsules fa-fw'></i>
+    Search Medicine </p> 
+
+      <form action="" method="POST">
+        <input type="text" class="text" value="Medicine Name" name="Aadhar_id" id="Aadhar_id"><a href="#"><ion-icon name="search"></ion-icon></a>
+    </form></div>  </div>
+
+ <div class="grid-container_1"> 
+  <div class="item5" id= "rect" style="margin-left: 60px; margin-top: 20px"><a href = "#"><p><small>Quick Register Patient</p></div></a></small>
+  <div class="item6" id= "rect" style="margin-top: 20px;><p><a href = "#"><small>Quick Register Medicine </p></div></a></small>
+  <div class="item7" id= "rect" style="margin-top: 20px;><p><a href = "#"><small>All Patients</p></div></a></small>
+  <div class="item8" id= "rect" style="margin-top: 20px;><p><a href = "#"><small>Diagnostic Status</p></div></a>  </small>
+  <div class="item9"><img src="https://www.cambridgemaths.org/Images/The-trouble-with-graphs.jpg" width="600" height="250"></div>
+  <div class="item10">Active Patients<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">234 </div></div>
+  <div class="item11">Active Staff<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">31 </div></div>
+  <div class="item12">Inventory Count<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">65 </div></div>
+  <div class="item13">Doctors Available<br> <div style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;">12 </div></div>  </div>
+</div>
+
+
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="js.js"></script>
+
+<script type="text/javascript">
+
+	let items = document.querySelectorAll('li');
+
+items.forEach(item => {
+  item.addEventListener('click', () => {
+     items.forEach(item => item.classList.remove('active'))
+      item.classList.add('active')
+    
+  })
+})
+</script>
+</body>
+</html>
