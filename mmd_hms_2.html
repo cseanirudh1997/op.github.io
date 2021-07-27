@@ -20,7 +20,7 @@ body {
  }
 
 ul {
-  background: yellow;
+  background: cyan;
   padding: 18px 0 10px 10px;
   border-right: 5px solid #3F83EF;
   width: 130px;
@@ -45,7 +45,7 @@ ul li {
 
 ul li:hover {
   transition: 0s;
-  background: #242932;
+  background:#3F83EF;
 }
 
 ul li.active:before {
@@ -57,7 +57,7 @@ ul li.active:before {
   height:20px;
   background: transparent;
   border-radius: 50%;
-  box-shadow: 10px 10px 0 #3F83EF;
+  box-shadow: 10px 10px 0;
 }
 
 ul li.active:after {
@@ -207,8 +207,8 @@ ul:hover {
 <div style="margin-left: 120px;">
       <div class="grid-container">
       	 
- <div class="item1"><p style="text-align: left;"> &nbsp &nbsp &nbsp Dashboard</p></div>
-
+ <div class="item1"><p style="text-align: left;"><a href="#" style="color: rgb(66, 70, 65); display: inline-flex; font-size: 20px;">&nbsp &nbsp &nbsp MadrasMed</a><a href="#" style="color: rgb(0, 154, 212); display: inline-flex; font-size: 30px;"> HMS </a><br> &nbsp &nbsp &nbsp Dashboard<hr>
+</p></div>
   <div class="item2"> <p>
     Search Patient </p>
       <form action="" method="POST">
@@ -228,7 +228,7 @@ ul:hover {
       <form action="" method="POST">
         <input type="text" class="text" value="Medicine Name" name="Aadhar_id" id="Aadhar_id"><a href="#"><ion-icon name="search"></ion-icon></a>
     </form></div>  </div>
-
+<hr>
  <div class="grid-container_1"> 
   <div class="item5" id= "rect" style="margin-left: 60px; margin-top: 20px"><a href = "#"><p><small>Quick Register Patient</p></div></a></small>
   <div class="item6" id= "rect" style="margin-top: 20px;><p><a href = "#"><small>Quick Register Medicine </p></div></a></small>
